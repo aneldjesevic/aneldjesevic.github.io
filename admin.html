@@ -325,15 +325,12 @@ input:invalid{
                 username.setCustomValidity("Incorrect username");
                 return
             }
-            else if(password.value != "anel123")
+            if(password.value != "anel123")
             {
                 password.setCustomValidity("Incorrect password");
                 return
             }
-            else
-            {
                 window.location.href="index.html";
-            }
         }
 
         btnLogin.onclick = validateInfo;
