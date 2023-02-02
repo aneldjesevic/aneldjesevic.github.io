@@ -351,6 +351,8 @@ input:invalid{
         document.getElementById("loginTab").click();
 
         var password = document.getElementById("etSPassword")
+        var username = document.getElementById("etSUsername")
+        var btnSignup = document.getElementById("btnSignup")
             , confirm_password = document.getElementById("etConfirmPassword");
 
         function validatePassword() {
@@ -360,11 +362,30 @@ input:invalid{
                 confirm_password.setCustomValidity('');
             }
         }
+        function validateUsername()
+        {
+            if(!username.value.length > 3)
+            {
+                username.setCustomValidity("Username must be over 3 characters");
+                btnSignup.disabled = true;
+            }
+            else if (username.value.length > 10)
+            {
+                username.setCustomValidity("Username must be under 11 characters");
+                btnSignup.disabled = true;
+            }
+            else
+            {
+                username.setCustomValidity('');
+                btnSignup.disabled = false;
+            }
+        }
 
+        username.onchange = validateUsername;
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
     </script>
-     <script src="main.js"></script>
+
 </body>
 
 </html>
