@@ -300,7 +300,7 @@ input:invalid{
            
             <form>
                 <div id="Login" class="tabcontent">
-                    <h1 class="head">Login</h1>
+                    <h1 class="head">Admin</h1>
                     <span class="label">Username</span>
                     <input id="etAUsername" type="text" placeholder="Username" required>
                     <input id="etAPassword" type="Password" placeholder="Password" required>
@@ -316,7 +316,7 @@ input:invalid{
 
         var password = document.getElementById("etAPassword")
         var username = document.getElementById("etAUsername")
-        var btnSignup = document.getElementById("btnALogin")
+        var btnLogin = document.getElementById("btnALogin")
 
         function validateInfo()
         {
@@ -335,6 +335,8 @@ input:invalid{
                 window.location.href="index.html";
             }
         }
+
+        btnLogin.onclick = validateInfo;
 
     </script>
 
