@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Register | Shypno</title>
+    <title> Admin | Shypno</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -292,42 +292,16 @@ input:invalid{
 <body>
 
     <div id="mainFolder">
-        <div class="tab">
-            <img id="logo" src="images/logonotext.png">
-            <button class="tablinks" id="loginTab" onclick="openTab(event,'Login')">Login</button>
-            <button class="tablinks" id="signupTab" onclick="openTab(event,'Signup')">Signup</button>
-            <button class="tablinks" id="forgotPasswordTab" onclick="openTab(event,'ForgotPassword')">Forgot
-                password</button>
-        </div>
         <div id="form-container">
            
             <form>
                 <div id="Login" class="tabcontent">
                     <h1 class="head">Login</h1>
                     <span class="label">Username</span>
-                    <input id="etLUsername" type="text" placeholder="Username" required>
-                    <input id="etLPassword" type="Password" placeholder="Password" required>
-                    <button class="button" type="submit" id="btnLogin">LOGIN</button>
+                    <input id="etAUsername" type="text" placeholder="Username" required>
+                    <input id="etAPassword" type="Password" placeholder="Password" required>
+                    <button class="button" type="submit" id="btnALogin">LOGIN</button>
                 </div>
-            </form>
-            <form>
-                <div id="Signup" class="tabcontent">
-                    <h1 class="head">Sign up</h1>
-                    <input id="etSUsername" type="text" placeholder="Username" required>
-                    <input id="etSPassword" type="Password" placeholder="Password" required>
-                    <input id="etConfirmPassword" type="Password" placeholder="Confirm password" required>
-                    <button class="button" type="submit" id="btnSignup">SIGN UP</button>
-
-                </div>
-            </form>
-            <form>
-                <div id="ForgotPassword" class="tabcontent">
-                    <h1 class="head">Forgot Password</h1>
-                    <input id="etFPEmail" type="email" placeholder="Email" required>
-                    <button class="button" type="submit" id="btnFPSendCode">SEND CODE</button>
-            
-                <input id="etFPVerificationCode" type="number" placeholder="Verification code" required>
-                <button class="button" type="submit" id="btnFPConfirm">CONFIRM</button>
             </form>
         </div>
     </div>
@@ -335,55 +309,16 @@ input:invalid{
 
     <script>
 
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-        document.getElementById("loginTab").click();
 
-        var password = document.getElementById("etSPassword")
-        var username = document.getElementById("etSUsername")
-        var btnSignup = document.getElementById("btnSignup")
-            , confirm_password = document.getElementById("etConfirmPassword");
+        var password = document.getElementById("etAPassword")
+        var username = document.getElementById("etAUsername")
+        var btnSignup = document.getElementById("btnALogin")
 
-        function validatePassword() {
-            if (confirm_password.value != password.value) {
-                confirm_password.setCustomValidity("Passwords Don't Match");
-            } else {
-                confirm_password.setCustomValidity('');
-            }
-        }
-        function validateUsername()
+        function validateInfo()
         {
-            if(!username.value.length > 3)
-            {
-                username.setCustomValidity("Username must be over 3 characters");
-                btnSignup.disabled = true;
-            }
-            else if (username.value.length > 10)
-            {
-                username.setCustomValidity("Username must be under 11 characters");
-                btnSignup.disabled = true;
-            }
-            else
-            {
-                username.setCustomValidity('');
-                btnSignup.disabled = false;
-            }
+            
         }
 
-        username.onchange = validateUsername;
-        password.onchange = validatePassword;
-        confirm_password.onkeyup = validatePassword;
     </script>
 
 </body>
