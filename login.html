@@ -11,7 +11,277 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/loginstyle.css">
     <link rel="icon" href="images/logonotext.png">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+* {
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+    color: #212121;
+}
+
+body {
+    background-color: #393E46;
+}
+
+#logo{
+    width: 34px;
+    height: 34px;
+    float: left;
+    margin-top: 1.5%;
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.button {
+    padding: 8px 15px;
+    border: unset;
+    width: 80%;
+    height: 40px;
+    border-radius: 16px;
+    color: #e8e8e8;
+    z-index: 1;
+    margin: 10px;
+    background: #212121;
+    position: relative;
+    font-weight: 1000;
+    outline: 0.2px solid #212121;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+   .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 8px;
+    background-color: #e8e8e8;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms
+   }
+   
+   .button:hover {
+    color: #212121;
+    transform: scale(1.1);
+   }
+   
+   .button:hover::before {
+    width: 100%;
+   }
+
+h1 {
+    padding-bottom: 22px;
+    text-align: center;
+}
+
+#form-container {
+    color: black;
+    width: 32%;
+    margin: 0 auto;
+    box-shadow: 6px 6px 12px rgb(41, 41, 41);
+    display: flex;
+    text-align: center;
+    padding-bottom: 40px;
+    justify-content: center;
+    background-color: #e8e8e8;
+}
+
+.tab {
+    overflow: hidden;
+    width: 32%;
+    margin: 0 auto;
+    justify-content: start;
+    background-color: #222831
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color:#e8e8e8;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.tab button:hover {
+    background-color: #393E46;
+}
+
+
+.tab button.active {
+    color: #e2e2e2;
+    background-color:#40454d;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.tab button{
+    border-radius: 20px 20px 0px 0px;
+}
+.tab{
+    border-radius: 20px 20px 0px 0px;
+}
+.tabcontent {
+    padding: 6px 12px;
+}
+
+input {
+    padding: 10px 15px;
+    border: unset;
+    width: 72%;
+    height: 30px;
+    border-radius: 16px;
+    color: #212121;
+    z-index: 1;
+    margin: 10px;
+    background: #e8e8e8;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+   input:focus {
+    padding: 12px 20px;
+    border: unset;
+    border-radius: 15px;
+    outline: unset;
+    z-index: 1;
+    color: #e8e8e8;
+    background: #e8e8e8;
+    background-color: #212121;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+    overflow: hidden;
+  }
+  
+  input:focus::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #212121;
+    z-index: -1;
+    -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+    transition: all 250ms;
+  }
+  
+  input:focus:hover {
+    background-color: #212121;
+  }
+  
+  input:focus:hover::before {
+    width: 100%;
+  }
+.label{
+    float: left;
+    color: transparent;
+    user-select: none;
+}
+
+
+#mainFolder {
+    margin-top: 8%;
+}
+
+@media only screen and (max-width: 1250px) {
+    #form-container{
+        width: 40%;
+       
+    }
+    .tab{
+        width: 40%;
+        
+    }
+    .tab button{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 920px) {
+    #form-container{
+        width: 60%;
+       
+    }
+    .tab{
+        width: 60%;
+        
+    }
+    .tab button{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 780px) {
+    #form-container{
+        width: 70%;
+       
+    }
+    .tab{
+        width: 70%;
+        
+    }
+    #logo{
+        width: 34px;
+        height: 34px;
+        margin-top: 1.25%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .tab button{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #form-container{
+        width: 92%;
+       
+    }
+    .tab{
+        width: 92%;
+    }
+    .tab button{
+        font-size: 13px;
+    }
+}
+@media only screen and (max-width: 380px) {
+    #form-container{
+        width: 96%;
+       
+    }
+    .tab{
+        width: 96%;
+    }
+    .tab button{
+        font-size: 10px;
+    }
+    #logo{
+        width: 28px;
+        height: 28px;
+        margin-top: 2%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -58,6 +328,37 @@
     </div>
     </div>
 
+    <script>
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("loginTab").click();
+
+        var password = document.getElementById("etSPassword")
+            , confirm_password = document.getElementById("etConfirmPassword");
+
+        function validatePassword() {
+            if (confirm_password.value != password.value) {
+                confirm_password.setCustomValidity("Passwords Don't Match");
+            } else {
+                confirm_password.setCustomValidity('');
+            }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
      <script src="main.js"></script>
 </body>
 
